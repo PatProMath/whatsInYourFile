@@ -176,9 +176,6 @@ public class WhatsInYourFileGUI extends javax.swing.JFrame {
         try {
             FileInputStream file = new FileInputStream(fileSelector.getSelectedFile());
             scan = new Scanner(file);
-//            FileReader reader = new FileReader(file);
-//            BufferedReader buff = new BufferedReader(reader);
-//            jTextArea1.read(buff, null);
             while(scan.hasNext()) {
                 String aWord = scan.next();
                 if (aWord.toLowerCase().equals(wordToFind.toLowerCase())) {
@@ -187,7 +184,7 @@ public class WhatsInYourFileGUI extends javax.swing.JFrame {
             } 
             JOptionPane.showMessageDialog(rootPane, "The word  occurs "+ numOfOccurrence + " time(s)!");
         } catch (Exception f) {
-            JOptionPane.showMessageDialog(null, "Error scanning file.\n Details: \n"+ f.toString());
+            JOptionPane.showMessageDialog(rootPane, "Error scanning file.\n Details: \n"+ f.toString());
         }
     }//GEN-LAST:event_findWordButtonActionPerformed
 
